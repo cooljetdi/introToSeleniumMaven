@@ -19,7 +19,7 @@ import day2.FindElements;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
-public class DressAutomation {
+public class DressAutomation1 {
 	WebDriver driver;
 	WebDriverWait wait;
 	

@@ -36,9 +36,6 @@ public class windowHandlesTest {
 		
 		System.out.println("Before switching - title is " + driver.getTitle());
 		
-	
-
-		
 		Set<String> ids = driver.getWindowHandles();
 		Iterator<String> id = ids.iterator();
 		

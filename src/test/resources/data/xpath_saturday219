@@ -1,0 +1,6 @@
+url=https://demo.guru99.com/test/newtours/register.php
+urlalert=https://demoqa.com/alerts
+firstname=//input[@name='firstName']
+lastname=//input[@name='lastName']
+phone=//input[@name='phone']
+email=userName

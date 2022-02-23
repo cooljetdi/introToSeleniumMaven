@@ -34,7 +34,7 @@ public class IframeTest {
 		driver.switchTo().frame(0);
 		WebElement draggable1 = driver.findElement(By.id("draggable"));
 		WebElement droppable2 = driver.findElement(By.id("droppable"));
-        Thread.sleep(3000);
+        Thread.sleep(3000);  // Need to wait before drag and drop!!!
 
 		action.dragAndDrop(draggable1, droppable2).build().perform();
 		

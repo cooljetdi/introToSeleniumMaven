@@ -15,6 +15,8 @@ To automate test on Register web page on http://demo.automationtesting.in/Index.
 package students.henry.february3;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -40,48 +42,50 @@ public class TestRegister {
 
 	@Test
 	public void testRegister() throws InterruptedException {
+		driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
 
+		
 		// Login page - Enter Email
 		driver.findElement(By.id("email")).sendKeys("henryleu@gmail.com");
-		Thread.sleep(delay);
+		//Thread.sleep(delay);
 		driver.findElement(By.id("enterimg")).click();
-		Thread.sleep(delay);
+		//Thread.sleep(delay);
 
 		// Choose File - Upload file 
 		String filePath = "C:\\Users\\Henry\\Desktop\\javaguy.jpg";	
 		driver.findElement(By.id("imagesrc")).sendKeys(filePath);
-		Thread.sleep(delay);
+		//Thread.sleep(delay);
 
 		// First Name
 		driver.findElement(By.xpath("(//input[@type='text'])[1]")).sendKeys("Henry");
-		Thread.sleep(delay);
+		//Thread.sleep(delay);
 
 		// Last Name
 		driver.findElement(By.xpath("(//input[@type='text'])[2]")).sendKeys("Leu");
-		Thread.sleep(delay);
+		//Thread.sleep(delay);
 
 		// Address
 		driver.findElement(By.xpath("//*[@id=\"basicBootstrapForm\"]/div[2]/div/textarea"))
 			  .sendKeys("Hello Kitty Ave, New York, NY 11354");
-		Thread.sleep(delay);
+		//Thread.sleep(delay);
 
 		// Email address
 		driver.findElement(By.xpath("//input[@type='email']")).sendKeys("roadtosuccess@gmail.com");
-		Thread.sleep(delay);
+		//Thread.sleep(delay);
 
 		// Phone
 		driver.findElement(By.xpath("(//input[@type='tel'])")).sendKeys("1234567890");
-		Thread.sleep(delay);
+		//Thread.sleep(delay);
 
 		// Gender - Male
 		driver.findElement(By.xpath("(//input[@type='radio'])[1]")).click();
-		Thread.sleep(delay);
+		//Thread.sleep(delay);
 
 		// Hobbies
 		driver.findElement(By.id("checkbox1")).click();
-		Thread.sleep(delay);
+		//Thread.sleep(delay);
 		driver.findElement(By.id("checkbox2")).click();
-		Thread.sleep(delay);
+		//Thread.sleep(delay);
 
 		// Languages
 		String language1 = "Japanese";
@@ -108,23 +112,23 @@ public class TestRegister {
 				element.click();
 		}
 		
-		Thread.sleep(delay);
+		//Thread.sleep(delay);
 
 		// Click on the white page to exit the language drop-down list
 		driver.findElement(By.xpath("//*[@id=\"section\"]/div/div")).click();
-		Thread.sleep(delay);
+		//Thread.sleep(delay);
 
 		// Skill
 		element = driver.findElement(By.id("Skills"));
 		Select select = new Select(element);
 		select.selectByVisibleText("Java");
-		Thread.sleep(delay);
+		//Thread.sleep(delay);
 
 		// Select Country - United States of America
 		element = driver.findElement(By.xpath("//select[@id='country']"));
 		select = new Select(element);
 		select.selectByVisibleText("United States of America");
-		Thread.sleep(delay);
+		//Thread.sleep(delay);
 		
         //This will scroll the web page till end.		
 	    JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -132,23 +136,23 @@ public class TestRegister {
 		
 		// Year
 		driver.findElement(By.id("yearbox")).sendKeys("1979");
-		Thread.sleep(delay);
+		//Thread.sleep(delay);
 
 		// Month
 		driver.findElement(By.xpath("(//select[@type='text'])[4]")).sendKeys("December");
-		Thread.sleep(delay);
+		//Thread.sleep(delay);
 
 		// Day
 		driver.findElement(By.id("daybox")).sendKeys("24");
-		Thread.sleep(delay);
+		//Thread.sleep(delay);
 
 		// Password
 		driver.findElement(By.id("firstpassword")).sendKeys("techcircle");
-		Thread.sleep(delay);
+		//Thread.sleep(delay);
 
 		// Confirm Password
 		driver.findElement(By.id("secondpassword")).sendKeys("techcircle");
-		Thread.sleep(delay + delay);
+		//Thread.sleep(delay + delay);
 	}
 
 	@After
